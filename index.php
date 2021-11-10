@@ -11,7 +11,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+  <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+  <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+  
     <title>CRUD, MONGODB</title>
   </head>
   <body>
@@ -24,7 +26,7 @@
 		      <div class="card-body">
 		      	<a href="create.php" class="btn btn-success">AGREGAR</a>
 		        <div class="table-responsive">
-		        	<table class="table table-striped" style="font-family: bellota; font-size: 14px;">
+		        	<table class="table table-striped" style="font-family: bellota; font-size: 14px;" id="TableProductos">
 		        	  <caption>Lista de Medicamentos</caption>
 		        	  <thead class="thead-dark">
 		        	    <tr>
@@ -80,3 +82,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<script type="text/javascript">
+  var TableProductos = document.querySelector("#TableProductos");
+	var dataTable = new DataTable(TableProductos,{
+		labels: {
+    placeholder: "Buscar Producto...",
+    perPage: "Mostrar {select} productos por página",
+    noRows: "No hay productos para mostrar",
+    info: "Mostrando {start} al {end} de {rows} productos (Página {page} de {pages} páginas)",
+		},
+	});
+</script>
