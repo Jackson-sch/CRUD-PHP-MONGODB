@@ -15,6 +15,17 @@
   <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
   
     <title>CRUD, MONGODB</title>
+<script type="text/javascript">
+  var TableProductos = document.querySelector("#TableProductos");
+	var dataTable = new DataTable(TableProductos,{
+		labels: {
+    placeholder: "Buscar Producto...",
+    perPage: "Mostrar {select} productos por página",
+    noRows: "No hay productos para mostrar",
+    info: "Mostrando {start} al {end} de {rows} productos (Página {page} de {pages} páginas)",
+		},
+	});
+</script>
   </head>
   <body>
   	<div class="text-center text-white bg-primary">
@@ -83,14 +94,4 @@
   </body>
 </html>
 
-<script type="text/javascript">
-  var TableProductos = document.querySelector("#TableProductos");
-	var dataTable = new DataTable(TableProductos,{
-		labels: {
-    placeholder: "Buscar Producto...",
-    perPage: "Mostrar {select} productos por página",
-    noRows: "No hay productos para mostrar",
-    info: "Mostrando {start} al {end} de {rows} productos (Página {page} de {pages} páginas)",
-		},
-	});
-</script>
+
